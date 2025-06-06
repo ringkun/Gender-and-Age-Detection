@@ -3,6 +3,7 @@
 import cv2
 import math
 import argparse
+# Makes the box in image.
 
 def highlightFace(net, frame, conf_threshold=0.7):
     frameOpencvDnn=frame.copy()
@@ -36,8 +37,9 @@ ageProto="age_deploy.prototxt"
 ageModel="age_net.caffemodel"
 genderProto="gender_deploy.prototxt"
 genderModel="gender_net.caffemodel"
-
+# No clue on where the model mean values were calculated from.
 MODEL_MEAN_VALUES=(78.4263377603, 87.7689143744, 114.895847746)
+# Partitian of age and gender
 ageList=['(0-2)', '(4-6)', '(8-12)', '(15-20)', '(25-32)', '(38-43)', '(48-53)', '(60-100)']
 genderList=['Male','Female']
 
