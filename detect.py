@@ -30,9 +30,8 @@ def highlightFace(net, frame, conf_threshold=0.6):
 parser=argparse.ArgumentParser()
 parser.add_argument('--image')
 parser.add_argument('--frame')
-
 args=parser.parse_args()
-
+# List of neural networks
 faceProto="opencv_face_detector.pbtxt"
 faceModel="opencv_face_detector_uint8.pb"
 ageProto="age_deploy.prototxt"
@@ -101,7 +100,6 @@ while True :
         age=ageList[agePreds[0].argmax()]
         cv2.namedWindow(windowName, cv2.WINDOW_NORMAL)
         cv2.putText(resultImg, f'{gender}, {age}', (faceBox[0], faceBox[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,255,255), 2, cv2.LINE_AA)    
-
 
     # Render Image
     cv2.imshow(windowName, resultImg)
