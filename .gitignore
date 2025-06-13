@@ -1,0 +1,5 @@
+kivy_env/
+*.env/
+*.venv/
+env/
+venv/
